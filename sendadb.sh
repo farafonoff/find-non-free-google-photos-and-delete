@@ -1,8 +1,8 @@
 #!/bin/sh
 
-mkdir -p google-photos-sent
+mkdir -p google-photos-done
 
-for i in google-photos-sent/*; do
+for i in google-photos-downloads/*; do
     adb push "$i" /sdcard/DCIM/Camera/
     if [ $? -ne 0 ]; then
         echo "Error pushing $i"
@@ -13,5 +13,5 @@ for i in google-photos-sent/*; do
     filename=$(basename "$i")
     adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/DCIM/Camera/"$filename"
     
-    mv "$i" google-photos-anna/
+    mv "$i" google-photos-done/
 done

@@ -9,6 +9,7 @@ dist/
 # Downloaded photos
 google-photos/
 google-photos-anna/
+google-photos-downloads/
 
 # Generated/temporary files
 checkpoint.json
@@ -16,6 +17,10 @@ datelog.json
 datelog.json_*
 photolog.json
 merged.json
+chrome_profile*
+non-free-photos.log
+google-photos-downloads
+google-photos-done
 
 # Playwright cache
 .playwright/

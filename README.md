@@ -35,6 +35,15 @@ npm start
 
 ## Available Scripts
 
+### Two-phase non-free photos workflow (recommended)
+
+1. **`npm run scan`** – Scan all photos (ArrowRight), download non-free photos to `google-photos-downloads/`, append every photo (free and non-free) to `non-free-photos.log` for restart checkpoint. Resume from last logged photo if you re-run. Optional: start from a specific photo id: `START_ID=AF1Qip... npm run scan` or `npm run scan -- AF1Qip...`.
+2. **`npm run delete-from-log`** – Read `non-free-photos.log` and delete only **non-free** (downloaded) entries from Google Photos; marks them as `deleted: true`. Free-photo lines in the log are used only for checkpoint and are never deleted.
+
+Start Chrome with remote debugging first (e.g. `./run.sh`), then run `npm run scan`; when done, run `npm run delete-from-log` to delete the logged non-free photos.
+
+### Other scripts
+
 - **`npm run dev`** - Run the main automation script in development mode using tsx
 - **`npm start`** - Run the compiled JavaScript directly
 - **`npm run restart`** - Continuously restart the script with 2-second delays if it fails

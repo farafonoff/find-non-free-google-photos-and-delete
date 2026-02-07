@@ -9,6 +9,8 @@
     "dev": "tsx index.ts",
     "restart": "while true; do tsx index.ts || [ $? -eq 1 ] && echo 'Restarting...' && sleep 2 || break; done",
     "fixremove": "tsx fixremove.ts",
+    "scan": "tsx scan-and-download.ts",
+    "delete-from-log": "tsx delete-from-log.ts",
     "scandates": "tsx fixdates.ts",
     "verifydates": "tsx verifydates.ts",
     "fillindates": "tsx fillInDates.ts",
